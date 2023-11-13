@@ -71,7 +71,7 @@ def main(datadir,seq_length,lead_time):
 
 
 
-    dir = r"data-ConLSTM-model"
+    dir = r"./data-con-model"
     if not os.path.exists(dir):
         os.mkdir(dir)
     np.save('./data-ConLSTM-model/features_train.npy', features_train)
@@ -84,7 +84,7 @@ def main(datadir,seq_length,lead_time):
 
 if __name__ == '__main__':
     p = ArgParser()
-    p.add_argument('--datadir', type=str, default=r'C:\Users\wangziyu\Desktop\jilin_smap_60_100', help='Path to data')
+    p.add_argument('--datadir', type=str, default='C:\Users\wangziyu\Desktop\jilin_smap_60_100', help='Path to data')
     p.add_argument('--seq_length', type=int, default=3, help='input timesteps for lstm model')
     p.add_argument('--lead_time', type=int, default=3, help='Forecast lead time')
     args = p.parse_args()
